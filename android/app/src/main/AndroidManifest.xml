@@ -2,6 +2,7 @@
     package="com.example.quotes_deno">
    <application
         android:label="quotes_deno"
+        android:usesCleartextTraffic="true"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import './screens/homeScreen.dart';
+import './models/quotesAPI.dart';
 
 class MyApp extends StatefulWidget {
   @override
@@ -10,11 +12,14 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: "Quotes Den",
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData.light(),
-      home: QuotesDen(),
+    return ChangeNotifierProvider(
+      create: (contxt) => Quotes(),
+      child: MaterialApp(
+        title: "Quotes Den",
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData.light(),
+        home: QuotesDen(),
+      ),
     );
   }
 }
